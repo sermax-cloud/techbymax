@@ -1,0 +1,163 @@
+.hero {
+    position: relative;
+    padding: 8rem 0 5rem;
+    overflow: hidden;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    color: var(--white);
+    /* Ensure text is white against images */
+}
+
+/* Background Slider */
+.hero-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background-color: #0f172a;
+}
+
+.slider-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transform: scale(1);
+    transition: opacity 1.5s ease-in-out;
+}
+
+@keyframes kenBurns {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.15);
+    }
+
+    /* Gentle zoom */
+}
+
+.slider-image.active {
+    opacity: 0.5;
+    /* Brighter to show image details */
+    animation: kenBurns 7s linear infinite alternate;
+    /* Continuous movement */
+}
+
+.slider-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Gradient: Clearer at top/center, darker at bottom for text contrast */
+    background: linear-gradient(to bottom,
+            rgba(15, 23, 42, 0.3) 0%,
+            rgba(15, 23, 42, 0.6) 40%,
+            rgba(15, 23, 42, 0.95) 100%);
+    z-index: -1;
+}
+
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    padding-top: 4rem;
+    /* Optical center */
+}
+
+.hero-content h1 {
+    margin-bottom: 2rem;
+    line-height: 1.1;
+    color: var(--white);
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    /* Strong shadow for readability */
+}
+
+.text-gradient {
+    background: linear-gradient(135deg, var(--primary-green), #4adece);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 30px rgba(0, 185, 107, 0.3);
+}
+
+.hero-subtext {
+    font-size: 1.35rem;
+    margin-bottom: 3rem;
+    max-width: 700px;
+    color: #e2e8f0;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 3.5rem;
+    justify-content: center;
+}
+
+.text-white {
+    color: var(--white) !important;
+    border-color: var(--white) !important;
+}
+
+.text-white:hover {
+    background-color: var(--white) !important;
+    color: var(--accent-black) !important;
+}
+
+.trust-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    color: #cbd5e1;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 0.6rem 1.25rem;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.trust-badge .dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--primary-green);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--primary-green);
+}
+
+/* Animations */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+    }
+}
