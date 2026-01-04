@@ -36,7 +36,7 @@
 
 .toggle-icon {
     font-size: 1.5rem;
-    color: var(--primary-green);
+    color: var(--primary-color);
     font-weight: 300;
 }
 
@@ -54,5 +54,5 @@
 }
 
 .faq-item.active .faq-question h3 {
-    color: var(--primary-green);
+    color: var(--primary-color);
 }

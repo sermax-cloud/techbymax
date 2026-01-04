@@ -5,7 +5,7 @@ const FloatingWhatsApp = () => {
     // Number format: 233 (Ghana code) + number without leading 0
     // Input: 02442943446 -> We remove the first 0 and prepend 233
     // Result: 2332442943446
-    const phoneNumber = "2332442943446";
+    const phoneNumber = "233242943446";
     const message = "Hello! I would like to inquire about your digital services.";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 

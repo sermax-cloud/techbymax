@@ -12,6 +12,7 @@ import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import Team from '../components/Team';
 import Testimonials from '../components/Testimonials';
+import Blog from '../components/Blog';
 
 function HomePage() {
     // Simple SEO setup & Scroll Animations
@@ -57,6 +58,7 @@ function HomePage() {
                 <Testimonials />
                 <Pricing />
                 <FAQ />
+                <Blog />
                 <Contact />
             </main>
             <Footer />

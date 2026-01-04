@@ -24,6 +24,12 @@
     transform: translateY(-5px);
 }
 
+.service-card:hover .service-icon {
+    transform: scale(1.2) rotate(5deg);
+    animation-play-state: paused;
+    /* Pause float on hover for stability */
+}
+
 .service-icon-wrapper {
     margin-bottom: 1.5rem;
     display: inline-block;
@@ -34,6 +40,22 @@
 
 .service-icon {
     font-size: 2rem;
+    display: block;
+    animation: float 3s ease-in-out infinite;
+    transition: transform 0.3s ease;
+}
+
+/* Floating animation keyframes */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
 }
 
 .service-card h3 {
@@ -48,7 +70,7 @@
 
 .service-link {
     font-weight: 600;
-    color: var(--primary-green);
+    color: var(--primary-color);
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;

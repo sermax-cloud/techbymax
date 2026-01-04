@@ -31,7 +31,7 @@
 
 /* Add a subtle glow on hover */
 .team-card:hover .team-image-wrapper {
-    box-shadow: 0 0 0 4px var(--primary-green), var(--shadow-lg);
+    box-shadow: 0 0 0 4px var(--primary-color), var(--shadow-lg);
 }
 
 .team-image {
@@ -52,7 +52,7 @@
 
 .team-role {
     display: block;
-    color: var(--primary-green);
+    color: var(--primary-color);
     font-weight: 600;
     font-size: 0.95rem;
     margin-bottom: 1rem;

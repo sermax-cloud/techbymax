@@ -86,10 +86,10 @@
 }
 
 .text-gradient {
-    background: linear-gradient(135deg, var(--primary-green), #4adece);
+    background: linear-gradient(135deg, var(--primary-color), #60A5FA);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 30px rgba(0, 185, 107, 0.3);
+    text-shadow: 0 0 30px rgba(37, 99, 235, 0.3);
 }
 
 .hero-subtext {
@@ -132,9 +132,9 @@
 .trust-badge .dot {
     width: 8px;
     height: 8px;
-    background-color: var(--primary-green);
+    background-color: var(--primary-color);
     border-radius: 50%;
-    box-shadow: 0 0 10px var(--primary-green);
+    box-shadow: 0 0 10px var(--primary-color);
 }
 
 /* Animations */

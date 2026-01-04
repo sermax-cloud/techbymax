@@ -1,46 +1,89 @@
 .process {
     background-color: var(--light-gray);
+    position: relative;
+    overflow: hidden;
 }
 
 .process-flow {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+    position: relative;
+    z-index: 1;
 }
 
 .process-step {
     background: var(--white);
-    padding: 2rem;
+    padding: 2.5rem 2rem;
     border-radius: 20px;
     position: relative;
     transition: var(--transition);
     border: 1px solid transparent;
+    overflow: hidden;
 }
 
+/* Hover State */
 .process-step:hover {
-    border-color: var(--primary-green);
-    box-shadow: var(--shadow-md);
+    border-color: rgba(37, 99, 235, 0.3);
+    box-shadow: 0 15px 30px rgba(37, 99, 235, 0.15);
+    transform: translateY(-5px);
 }
 
+/* Step Number - Blue Theme */
 .step-number {
-    font-size: 3rem;
-    font-weight: 800;
-    color: #e2e8f0;
-    margin-bottom: 1rem;
-    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: rgba(37, 99, 235, 0.1);
+    /* Light Blue */
+    color: var(--primary-color);
+    border-radius: 50%;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    transition: var(--transition);
 }
 
 .process-step:hover .step-number {
-    color: rgba(0, 185, 107, 0.2);
+    background: var(--primary-color);
+    color: var(--white);
+    transform: scale(1.1) rotate(10deg);
+    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
 }
 
 .process-step h3 {
     font-size: 1.25rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
+    transition: var(--transition);
+    color: var(--accent-black);
+}
+
+.process-step:hover h3 {
+    color: var(--primary-color);
 }
 
 .process-step p {
     font-size: 0.95rem;
+    color: var(--accent-gray);
+    line-height: 1.6;
+}
+
+/* Add a blue accent line at the bottom for style */
+.process-step::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.process-step:hover::after {
+    width: 100%;
 }
 
 @media (min-width: 1024px) {

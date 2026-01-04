@@ -20,7 +20,7 @@
 }
 
 .breadcrumb a {
-    color: #00ff88;
+    color: var(--primary-color);
     text-decoration: none;
     transition: opacity 0.3s;
 }
@@ -37,7 +37,7 @@
     font-size: 3rem;
     font-weight: 700;
     margin-bottom: 1rem;
-    background: linear-gradient(135deg, #00ff88 0%, #00cc6a 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -108,9 +108,9 @@
 }
 
 .feature-item:hover {
-    border-color: #00ff88;
+    border-color: var(--primary-color);
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 255, 136, 0.1);
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.1);
 }
 
 .feature-icon {
@@ -159,7 +159,7 @@
 }
 
 .benefits-list strong {
-    color: #00ff88;
+    color: var(--primary-color);
     font-weight: 600;
 }
 
@@ -184,13 +184,13 @@
     background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
     padding: 2rem;
     border-radius: 12px;
-    border-left: 4px solid #00ff88;
+    border-left: 4px solid var(--primary-color);
 }
 
 .step-number {
     width: 50px;
     height: 50px;
-    background: linear-gradient(135deg, #00ff88 0%, #00cc6a 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
     color: white;
     border-radius: 50%;
     display: flex;
@@ -235,7 +235,7 @@
 
 .cta-button {
     display: inline-block;
-    background: linear-gradient(135deg, #00ff88 0%, #00cc6a 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
     color: #1a1a2e;
     padding: 1rem 2.5rem;
     border-radius: 50px;
@@ -243,12 +243,12 @@
     font-weight: 600;
     font-size: 1.1rem;
     transition: all 0.3s ease;
-    box-shadow: 0 10px 30px rgba(0, 255, 136, 0.3);
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
 }
 
 .cta-button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 15px 40px rgba(0, 255, 136, 0.4);
+    box-shadow: 0 15px 40px rgba(37, 99, 235, 0.4);
 }
 
 /* Sidebar */
@@ -296,12 +296,12 @@
 
 .service-links a:hover {
     background: #f8f9fa;
-    color: #00ff88;
+    color: var(--primary-color);
     padding-left: 1.5rem;
 }
 
 .service-links li.active a {
-    background: linear-gradient(135deg, #00ff88 0%, #00cc6a 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
     color: white;
     font-weight: 600;
 }
@@ -323,7 +323,7 @@
 
 .sidebar-cta-btn {
     display: block;
-    background: #00ff88;
+    background: var(--primary-color);
     color: #1a1a2e;
     padding: 0.875rem 1.5rem;
     border-radius: 8px;
@@ -334,7 +334,7 @@
 }
 
 .sidebar-cta-btn:hover {
-    background: #00cc6a;
+    background: var(--primary-dark);
     transform: translateY(-2px);
 }
 

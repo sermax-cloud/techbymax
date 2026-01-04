@@ -47,7 +47,7 @@
 }
 
 .footer-links a:hover {
-    color: var(--primary-green);
+    color: var(--primary-color);
 }
 
 .social-icons {
@@ -68,7 +68,7 @@
 }
 
 .social-icons a:hover {
-    background: var(--primary-green);
+    background: var(--primary-color);
     transform: translateY(-3px);
 }
 

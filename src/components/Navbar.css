@@ -51,7 +51,7 @@
 }
 
 .text-green {
-    color: var(--primary-green);
+    color: var(--primary-color);
 }
 
 .nav-links {
@@ -73,7 +73,7 @@
 }
 
 .nav-links a:not(.btn):hover {
-    color: var(--primary-green);
+    color: var(--primary-color);
 }
 
 .btn-sm {
