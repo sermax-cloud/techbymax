@@ -14,7 +14,7 @@ const Process = () => {
     return (
         <section id="process" className="process section-padding">
             <div className="container">
-                <div className="section-header text-center reveal">
+                <div className="section-header reveal">
                     <h2>Our Process</h2>
                     <p>A proven workflow to deliver excellence every time.</p>
                 </div>

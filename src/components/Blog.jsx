@@ -32,7 +32,7 @@ const Blog = () => {
     return (
         <section id="blog" className="blog section-padding">
             <div className="container">
-                <div className="section-header text-center reveal">
+                <div className="section-header reveal">
                     <h2>Latest Insights</h2>
                     <p>Trends, strategies, and tips to grow your digital presence.</p>
                 </div>

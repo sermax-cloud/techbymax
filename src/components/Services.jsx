@@ -51,7 +51,7 @@ const Services = () => {
     return (
         <section id="services" className="services section-padding">
             <div className="container">
-                <div className="section-header text-center reveal">
+                <div className="section-header reveal">
                     <h2>Our Services</h2>
                     <p>Comprehensive digital solutions tailored to your growth.</p>
                 </div>

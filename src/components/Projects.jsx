@@ -36,7 +36,7 @@ const Projects = () => {
     return (
         <section id="portfolio" className="projects section-padding">
             <div className="container">
-                <div className="section-header text-center reveal">
+                <div className="section-header reveal">
                     <h2>Our Work</h2>
                     <p>We build digital solutions that deliver real results.</p>
                 </div>

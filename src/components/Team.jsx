@@ -34,7 +34,7 @@ const Team = () => {
     return (
         <section className="team section-padding">
             <div className="container">
-                <div className="section-header text-center reveal">
+                <div className="section-header reveal">
                     <h2>Meet the Team</h2>
                     <p>The minds behind digital excellence.</p>
                 </div>

@@ -24,7 +24,7 @@ const Pricing = () => {
     return (
         <section className="pricing section-padding">
             <div className="container">
-                <div className="section-header text-center reveal">
+                <div className="section-header reveal">
                     <h2>Clear Pricing</h2>
                     <p>No hidden fees. Choose the package that suits you.</p>
                 </div>
