@@ -32,7 +32,7 @@ const Navbar = () => {
   }, [mobileMenuOpen]);
 
   return (
-    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`} ref={navRef}>
+    <nav className={`navbar ${scrolled || !isHomePage ? 'scrolled' : ''}`} ref={navRef}>
       <div className="container nav-container">
         <Link to="/" className="logo" onClick={() => setMobileMenuOpen(false)}>
           <img src="/logo.png" alt="TechByMax - High-Performance Digital Solutions" className="logo-img" />
