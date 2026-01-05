@@ -45,7 +45,7 @@ const Projects = () => {
                     {projects.map((project, index) => (
                         <div className={`project-card reveal reveal-stagger-${index + 1}`} key={project.id}>
                             <div className="project-image">
-                                <img src={project.image} alt={project.title} />
+                                <img src={project.image} alt={project.title} loading="lazy" />
                             </div>
                             <div className="project-info">
                                 <span className="project-cat">{project.category}</span>

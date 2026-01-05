@@ -43,7 +43,7 @@ const Team = () => {
                     {teamMembers.map((member, index) => (
                         <div className={`team-card reveal reveal-stagger-${index + 1}`} key={member.id}>
                             <div className="team-image-wrapper">
-                                <img src={member.image} alt={member.name} className="team-image" />
+                                <img src={member.image} alt={member.name} className="team-image" loading="lazy" />
                             </div>
                             <div className="team-info">
                                 <h3>{member.name}</h3>
