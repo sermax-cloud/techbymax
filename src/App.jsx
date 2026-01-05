@@ -7,6 +7,7 @@ import WebApplications from './pages/WebApplications';
 import UIUXDesign from './pages/UIUXDesign';
 import MaintenanceSupport from './pages/MaintenanceSupport';
 import SEOPerformance from './pages/SEOPerformance';
+import BlogPost from './pages/BlogPost';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
 import './App.css';
 
@@ -22,6 +23,7 @@ function App() {
         <Route path="/services/ui-ux-design" element={<UIUXDesign />} />
         <Route path="/services/maintenance-support" element={<MaintenanceSupport />} />
         <Route path="/services/seo-performance" element={<SEOPerformance />} />
+        <Route path="/blog/:slug" element={<BlogPost />} />
       </Routes>
     </Router>
   );
