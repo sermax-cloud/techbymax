@@ -1,37 +1,43 @@
-import React, { useRef, useState } from 'react';
-import emailjs from '@emailjs/browser';
+import React, { useState } from 'react';
 import './Contact.css';
 
 const Contact = () => {
-    const form = useRef();
     const [status, setStatus] = useState(''); // 'sending', 'success', 'error'
     const [errorMessage, setErrorMessage] = useState('');
 
-    const sendEmail = (e) => {
+    const sendEmail = async (e) => {
         e.preventDefault();
         setStatus('sending');
         setErrorMessage('');
-        console.log("Attempting to send email...");
 
-        // REPLACE THESE WITH YOUR ACTUAL EMAILJS SERVICE, TEMPLATE, AND PUBLIC KEY
-        const SERVICE_ID = 'service_4sa5qqq';
-        const TEMPLATE_ID = 'template_b74b9wr';
-        const PUBLIC_KEY = 'a7ql2F0Ry6sEL52KN';
+        const formData = new FormData(e.target);
+        const data = Object.fromEntries(formData.entries());
 
-        emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
-            .then((result) => {
-                console.log("Email sent successfully:", result.text);
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                console.log("Email sent successfully:", result.data);
                 setStatus('success');
                 e.target.reset();
-                // Clear success message after 5 seconds
                 setTimeout(() => setStatus(''), 5000);
-            })
-            .catch((error) => {
-                console.error("EmailJS Error:", error);
-                setStatus('error');
-                // Set the specific error message to display
-                setErrorMessage(error.text || "Unknown error occurred. Check consle.");
-            });
+            } else {
+                console.error("Server Error:", result.error);
+                throw new Error(result.error || "Failed to send email");
+            }
+        } catch (error) {
+            console.error("Submission Error:", error);
+            setStatus('error');
+            setErrorMessage(error.message || "Failed to connect to the server. Make sure the backend is running.");
+        }
     };
 
     return (
@@ -75,7 +81,7 @@ const Contact = () => {
 
                     <div className="contact-form-wrapper glass-panel reveal reveal-stagger-2">
                         <h3>Tell us about your project</h3>
-                        <form ref={form} onSubmit={sendEmail} className="contact-form">
+                        <form onSubmit={sendEmail} className="contact-form">
                             <div className="form-group">
                                 <label>Name</label>
                                 <input type="text" name="user_name" placeholder="Your Name" required />
