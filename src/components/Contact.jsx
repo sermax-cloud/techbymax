@@ -5,10 +5,12 @@ import './Contact.css';
 const Contact = () => {
     const form = useRef();
     const [status, setStatus] = useState(''); // 'sending', 'success', 'error'
+    const [errorMessage, setErrorMessage] = useState('');
 
     const sendEmail = (e) => {
         e.preventDefault();
         setStatus('sending');
+        setErrorMessage('');
         console.log("Attempting to send email...");
 
         // REPLACE THESE WITH YOUR ACTUAL EMAILJS SERVICE, TEMPLATE, AND PUBLIC KEY
@@ -27,6 +29,8 @@ const Contact = () => {
             .catch((error) => {
                 console.error("EmailJS Error:", error);
                 setStatus('error');
+                // Set the specific error message to display
+                setErrorMessage(error.text || "Unknown error occurred. Check consle.");
             });
     };
 
@@ -98,7 +102,7 @@ const Contact = () => {
                                 {status === 'sending' ? 'Sending...' : 'Send Message'}
                             </button>
                             {status === 'success' && <p className="success-msg">Message sent successfully!</p>}
-                            {status === 'error' && <p className="error-msg">Failed to send. Please try again.</p>}
+                            {status === 'error' && <p className="error-msg">Failed to send: {errorMessage}</p>}
                         </form>
                     </div>
                 </div>
