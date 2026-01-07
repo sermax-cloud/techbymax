@@ -17,7 +17,7 @@ const Contact = () => {
                                 <span className="icon">📧</span>
                                 <div>
                                     <h4>Email Us</h4>
-                                    <p>hello@techbymax.com</p>
+                                    <p>info@techbymax.com</p>
                                 </div>
                             </div>
                             <div className="method">
