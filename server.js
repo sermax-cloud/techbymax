@@ -19,6 +19,9 @@ app.use((req, res, next) => {
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+// Serve static files from the dist directory
+app.use(express.static('dist'));
+
 app.post('/api/contact', async (req, res) => {
     const { user_name, user_email, service, message } = req.body;
 
@@ -30,7 +33,7 @@ app.post('/api/contact', async (req, res) => {
     try {
         const { data, error } = await resend.emails.send({
             from: 'TechByMax Website <info@techbymax.com>',
-            to: ['dela8759@gmail.com'], // Updated to verified email for testing
+            to: ['info@techbymax.com'], // Ensure domain is verified in Resend dashboard
             subject: `New Contact: ${user_name} - ${service}`,
             html: `
         <div style="font-family: sans-serif; padding: 20px;">
@@ -56,6 +59,11 @@ app.post('/api/contact', async (req, res) => {
         console.error('Server logic error:', error);
         res.status(500).json({ success: false, error: 'Internal Server Error' });
     }
+});
+
+// Handle React routing (SPA)
+app.get('*', (req, res) => {
+    res.sendFile('index.html', { root: 'dist' });
 });
 
 app.listen(port, () => {
