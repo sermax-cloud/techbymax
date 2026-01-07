@@ -1,7 +1,31 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
 import './Contact.css';
 
 const Contact = () => {
+    const form = useRef();
+    const [status, setStatus] = useState(''); // 'sending', 'success', 'error'
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+        setStatus('sending');
+
+        // REPLACE THESE WITH YOUR ACTUAL EMAILJS SERVICE, TEMPLATE, AND PUBLIC KEY
+        const SERVICE_ID = 'hostinger_smtp';
+        const TEMPLATE_ID = 'template_b74b9wr';
+        const PUBLIC_KEY = 'a7ql2F0Ry6sEL52KN';
+
+        emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
+            .then((result) => {
+                console.log(result.text);
+                setStatus('success');
+                e.target.reset();
+            }, (error) => {
+                console.log(error.text);
+                setStatus('error');
+            });
+    };
+
     return (
         <section id="contact" className="contact section-padding">
             <div className="container">
@@ -43,18 +67,18 @@ const Contact = () => {
 
                     <div className="contact-form-wrapper glass-panel reveal reveal-stagger-2">
                         <h3>Tell us about your project</h3>
-                        <form className="contact-form">
+                        <form ref={form} onSubmit={sendEmail} className="contact-form">
                             <div className="form-group">
                                 <label>Name</label>
-                                <input type="text" placeholder="Your Name" required />
+                                <input type="text" name="user_name" placeholder="Your Name" required />
                             </div>
                             <div className="form-group">
                                 <label>Email</label>
-                                <input type="email" placeholder="Your Email" required />
+                                <input type="email" name="user_email" placeholder="Your Email" required />
                             </div>
                             <div className="form-group">
                                 <label>Service Interested In</label>
-                                <select>
+                                <select name="service">
                                     <option>Website Development</option>
                                     <option>E-Commerce</option>
                                     <option>Web Application</option>
@@ -64,9 +88,13 @@ const Contact = () => {
                             </div>
                             <div className="form-group">
                                 <label>Message</label>
-                                <textarea rows="4" placeholder="Project details..." required></textarea>
+                                <textarea name="message" rows="4" placeholder="Project details..." required></textarea>
                             </div>
-                            <button type="submit" className="btn btn-primary btn-full">Send Message</button>
+                            <button type="submit" className="btn btn-primary btn-full" disabled={status === 'sending'}>
+                                {status === 'sending' ? 'Sending...' : 'Send Message'}
+                            </button>
+                            {status === 'success' && <p className="success-msg">Message sent successfully!</p>}
+                            {status === 'error' && <p className="error-msg">Failed to send. Please try again.</p>}
                         </form>
                     </div>
                 </div>
