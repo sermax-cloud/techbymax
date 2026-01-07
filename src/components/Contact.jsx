@@ -9,19 +9,23 @@ const Contact = () => {
     const sendEmail = (e) => {
         e.preventDefault();
         setStatus('sending');
+        console.log("Attempting to send email...");
 
         // REPLACE THESE WITH YOUR ACTUAL EMAILJS SERVICE, TEMPLATE, AND PUBLIC KEY
-        const SERVICE_ID = 'hostinger_smtp';
+        const SERVICE_ID = 'service_4sa5qqq';
         const TEMPLATE_ID = 'template_b74b9wr';
         const PUBLIC_KEY = 'a7ql2F0Ry6sEL52KN';
 
         emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
             .then((result) => {
-                console.log(result.text);
+                console.log("Email sent successfully:", result.text);
                 setStatus('success');
                 e.target.reset();
-            }, (error) => {
-                console.log(error.text);
+                // Clear success message after 5 seconds
+                setTimeout(() => setStatus(''), 5000);
+            })
+            .catch((error) => {
+                console.error("EmailJS Error:", error);
                 setStatus('error');
             });
     };
