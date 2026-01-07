@@ -30,7 +30,7 @@ export default async function handler(req, res) {
     try {
         const { data, error } = await resend.emails.send({
             from: 'TechByMax Website <info@techbymax.com>',
-            to: ['dela8759@gmail.com'],
+            to: ['info@techbymax.com'],
             subject: `New Contact: ${user_name} - ${service}`,
             html: `
       <div style="font-family: sans-serif; padding: 20px;">
