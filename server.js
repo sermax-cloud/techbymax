@@ -11,6 +11,12 @@ const port = 3000;
 app.use(cors());
 app.use(express.json());
 
+// Request logging middleware
+app.use((req, res, next) => {
+    console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
+    next();
+});
+
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 app.post('/api/contact', async (req, res) => {
@@ -24,7 +30,7 @@ app.post('/api/contact', async (req, res) => {
     try {
         const { data, error } = await resend.emails.send({
             from: 'TechByMax Website <info@techbymax.com>',
-            to: ['info@techbymax.com'], // Update this to your verified email for testing
+            to: ['dela8759@gmail.com'], // Updated to verified email for testing
             subject: `New Contact: ${user_name} - ${service}`,
             html: `
         <div style="font-family: sans-serif; padding: 20px;">

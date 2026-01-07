@@ -14,7 +14,13 @@ const Contact = () => {
         const data = Object.fromEntries(formData.entries());
 
         try {
-            const response = await fetch('/api/contact', {
+            // In development, use direct localhost to match the server port. 
+            // In production, use relative path so it uses the hosting domain.
+            const apiUrl = import.meta.env.DEV
+                ? 'http://localhost:3000/api/contact'
+                : '/api/contact';
+
+            const response = await fetch(apiUrl, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -22,7 +28,25 @@ const Contact = () => {
                 body: JSON.stringify(data),
             });
 
-            const result = await response.json();
+            let result;
+            const contentType = response.headers.get("content-type");
+
+            try {
+                if (contentType && contentType.includes("application/json")) {
+                    result = await response.json();
+                } else {
+                    const text = await response.text();
+                    console.error("Non-JSON response:", text);
+                    throw new Error(`Server returned non-JSON response: ${text.substring(0, 50)}...`);
+                }
+            } catch (parseError) {
+                console.error("Error parsing JSON:", parseError);
+                // Try to read text if json() failed (though json() reads the stream, so this might fail if body used. 
+                // But fetch body can typically only be read once.
+                // If json() fails mid-stream, we can't read it again. 
+                // However, the error 'Unexpected token' usually happens at the start.
+                throw new Error("Received invalid JSON from server. Check console for details.");
+            }
 
             if (result.success) {
                 console.log("Email sent successfully:", result.data);
