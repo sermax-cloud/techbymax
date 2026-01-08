@@ -61,9 +61,15 @@ app.post('/api/contact', async (req, res) => {
     }
 });
 
-// Handle React routing (SPA)
-app.get('*', (req, res) => {
-    res.sendFile('index.html', { root: 'dist' });
+// Handle React routing (SPA) - Catch-all middleware
+app.use((req, res) => {
+    // If request accepts html, send index.html
+    if (req.accepts('html')) {
+        res.sendFile('index.html', { root: 'dist' });
+        return;
+    }
+    // Otherwise 404
+    res.status(404).type('txt').send('Not found');
 });
 
 app.listen(port, () => {
