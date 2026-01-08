@@ -104,11 +104,17 @@
 @media (max-width: 968px) {
     .about-grid {
         grid-template-columns: 1fr;
+        gap: 2.5rem;
     }
 
     .about-visual {
-        height: 300px;
-        max-width: 500px;
+        height: 280px;
+        width: 100%;
+        max-width: 400px;
         margin: 0 auto;
+    }
+
+    .about-content h2 {
+        text-align: center;
     }
 }

@@ -61,6 +61,12 @@ img {
   padding: 5rem 0;
 }
 
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 3.5rem 0;
+  }
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
