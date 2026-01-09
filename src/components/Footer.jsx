@@ -33,14 +33,7 @@ const Footer = () => {
                         </ul>
                     </div>
 
-                    <div className="footer-social">
-                        <h4>Connect</h4>
-                        <div className="social-icons">
-                            <a href="#" aria-label="LinkedIn">LN</a>
-                            <a href="#" aria-label="Twitter">TW</a>
-                            <a href="#" aria-label="Instagram">IG</a>
-                        </div>
-                    </div>
+
                 </div>
 
                 <div className="footer-bottom">

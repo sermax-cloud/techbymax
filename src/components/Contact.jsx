@@ -98,9 +98,7 @@ const Contact = () => {
                             </div>
                         </div>
 
-                        <div className="social-links mt-4">
-                            {/* Social icons */}
-                        </div>
+
                     </div>
 
                     <div className="contact-form-wrapper glass-panel reveal reveal-stagger-2">
