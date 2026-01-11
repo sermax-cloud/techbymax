@@ -53,8 +53,8 @@ const Features = () => {
                 <div className="features-wrapper">
                     {/* Left Column: Content */}
                     <div className="features-content reveal">
-                        <span className="subtitle">Why Partner with Us?</span>
-                        <h2>We Deliver Results That Drive Growth for Your Business</h2>
+                        <span className="subtitle">High-Impact Results</span>
+                        <h2>Why Choose TechByMax</h2>
                         <p>
                             In today’s competitive digital landscape, your website isn’t just an online presence—it’s your most powerful tool to generate leads, increase traffic, and drive conversions.
                         </p>

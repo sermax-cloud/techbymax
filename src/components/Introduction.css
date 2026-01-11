@@ -1,0 +1,19 @@
+.introduction {
+    background-color: var(--bg-light);
+}
+
+.intro-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.intro-content h2 {
+    margin-bottom: 1.5rem;
+    color: var(--text-dark);
+}
+
+.intro-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-light);
+}

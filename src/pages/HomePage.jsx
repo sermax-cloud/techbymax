@@ -14,6 +14,8 @@ import Team from '../components/Team';
 import Testimonials from '../components/Testimonials';
 import Blog from '../components/Blog';
 
+import Introduction from '../components/Introduction';
+
 function HomePage() {
     // Simple SEO setup & Scroll Animations
     useEffect(() => {
@@ -49,6 +51,7 @@ function HomePage() {
             <Navbar />
             <main>
                 <Hero />
+                <Introduction />
                 <Features />
                 <Services />
                 <Projects />

@@ -69,7 +69,7 @@ const Contact = () => {
             <div className="container">
                 <div className="contact-wrapper">
                     <div className="contact-info reveal">
-                        <h2>Let's build something great together</h2>
+                        <h2>Get a Website That Converts</h2>
                         <p className="contact-desc">
                             Ready to start your project? Tell us about your goals and we'll help you achieve them.
                         </p>

@@ -15,7 +15,7 @@ const Process = () => {
         <section id="process" className="process section-padding">
             <div className="container">
                 <div className="section-header reveal">
-                    <h2>Our Process</h2>
+                    <h2>Our Web Development Process</h2>
                     <p>A proven workflow to deliver excellence every time.</p>
                 </div>
 

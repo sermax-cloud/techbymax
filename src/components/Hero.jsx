@@ -25,11 +25,12 @@ const Hero = () => {
             {/* Background Slider */}
             <div className="hero-slider">
                 {images.map((img, index) => (
-                    <div
+                    <img
                         key={index}
+                        src={img}
+                        alt="Best web design and development agency in Ghana"
                         className={`slider-image ${index === currentImageIndex ? 'active' : ''}`}
-                        style={{ backgroundImage: `url(${img})` }}
-                    ></div>
+                    />
                 ))}
                 <div className="slider-overlay"></div>
             </div>
@@ -37,16 +38,15 @@ const Hero = () => {
             <div className="container hero-container">
                 <div className="hero-content animate-fade-in">
                     <h1>
-                        Building High-Performance <br />
-                        <span className="text-gradient">Websites That Grow</span> <br />
-                        Your Business
+                        Best Web Design & <br />
+                        <span className="text-gradient">Development Agency</span> <br />
+                        in Ghana
                     </h1>
                     <p className="hero-subtext">
-                        Custom websites, web apps & digital solutions for businesses ready to scale.
+                        We help businesses in Ghana and beyond design, build, and launch modern websites that attract customers and drive real growth.
                     </p>
                     <div className="hero-actions">
-                        <a href="#contact" className="btn btn-primary">Get a Free Quote</a>
-                        <a href="#portfolio" className="btn btn-secondary text-white">View Our Work</a>
+                        <a href="/services" className="btn btn-primary">View Our Services</a>
                     </div>
 
                     <div className="trust-badge">
