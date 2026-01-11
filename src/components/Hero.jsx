@@ -46,7 +46,7 @@ const Hero = () => {
                         We help businesses in Ghana and beyond design, build, and launch modern websites that attract customers and drive real growth.
                     </p>
                     <div className="hero-actions">
-                        <a href="/services" className="btn btn-primary">View Our Services</a>
+                        <a href="#services" className="btn btn-primary">View Our Services</a>
                     </div>
 
                     <div className="trust-badge">
