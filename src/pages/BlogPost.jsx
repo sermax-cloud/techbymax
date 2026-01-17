@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import SEO from '../components/SEO';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { blogPosts } from '../data/blogPosts';
 import './BlogPost.css';
 import Navbar from '../components/Navbar';
@@ -8,7 +8,7 @@ import Footer from '../components/Footer';
 
 const BlogPost = () => {
     const { slug } = useParams();
-    const navigate = useNavigate();
+
 
     // Find post by slug or ID (handling legacy ID links if any)
     const post = blogPosts.find(p => p.slug === slug || p.id.toString() === slug);

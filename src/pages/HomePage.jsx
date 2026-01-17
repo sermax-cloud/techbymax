@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import SEO from '../components/SEO';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
@@ -21,8 +22,8 @@ function HomePage() {
     useEffect(() => {
         // Force scroll to top on load
         window.scrollTo(0, 0);
-        if ('scrollRestoration' in history) {
-            history.scrollRestoration = 'manual';
+        if ('scrollRestoration' in window.history) {
+            window.history.scrollRestoration = 'manual';
         }
 
         // Scroll Animation Observer
