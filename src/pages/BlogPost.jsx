@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import SEO from '../components/SEO';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { blogPosts } from '../data/blogPosts';
 import './BlogPost.css';
@@ -32,6 +33,13 @@ const BlogPost = () => {
 
     return (
         <div className="blog-post-page">
+            <SEO
+                title={`${post.title} | TechByMax Blog`}
+                description={post.excerpt}
+                image={post.image}
+                canonicalUrl={`/blog/${post.slug}`}
+                keywords={`${post.category}, TechByMax blog, technology trends Ghana, web development blog`}
+            />
             <Navbar />
 
             <article className="blog-article">

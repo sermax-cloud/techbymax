@@ -1,30 +1,19 @@
 import React, { useEffect } from 'react';
+import SEO from '../components/SEO';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import './ServicePage.css';
 
 const WebApplications = () => {
-    useEffect(() => {
-        window.scrollTo(0, 0);
-        document.title = "Web Application Development | TechByMax - Custom Web Apps in Ghana";
-
-        const metaDesc = document.querySelector('meta[name="description"]');
-        if (metaDesc) {
-            metaDesc.setAttribute('content', 'Professional web application development in Ghana. Custom dashboards, booking systems, client portals, and admin panels built with modern technologies.');
-        }
-
-        let metaKeywords = document.querySelector('meta[name="keywords"]');
-        if (!metaKeywords) {
-            metaKeywords = document.createElement('meta');
-            metaKeywords.name = 'keywords';
-            document.head.appendChild(metaKeywords);
-        }
-        metaKeywords.setAttribute('content', 'web application development, custom dashboard, booking system, client portal, admin panel, web app Ghana');
-    }, []);
-
     return (
         <div className="service-page">
+            <SEO
+                title="Web Application Development | TechByMax - Custom Web Apps in Ghana"
+                description="Professional web application development in Ghana. Custom dashboards, booking systems, client portals, and admin panels built with modern technologies."
+                keywords="web application development, custom dashboard, booking system, client portal, admin panel, web app Ghana"
+                canonicalUrl="/services/web-applications"
+            />
             <Navbar />
 
             <section className="service-hero">

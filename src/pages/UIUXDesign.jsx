@@ -1,30 +1,19 @@
 import React, { useEffect } from 'react';
+import SEO from '../components/SEO';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import './ServicePage.css';
 
 const UIUXDesign = () => {
-    useEffect(() => {
-        window.scrollTo(0, 0);
-        document.title = "UI/UX & Web Design Services | TechByMax - Professional Design in Ghana";
-
-        const metaDesc = document.querySelector('meta[name="description"]');
-        if (metaDesc) {
-            metaDesc.setAttribute('content', 'Professional UI/UX and web design services in Ghana. Website redesign, mobile-first layouts, and brand-aligned designs that enhance user experience and drive conversions.');
-        }
-
-        let metaKeywords = document.querySelector('meta[name="keywords"]');
-        if (!metaKeywords) {
-            metaKeywords = document.createElement('meta');
-            metaKeywords.name = 'keywords';
-            document.head.appendChild(metaKeywords);
-        }
-        metaKeywords.setAttribute('content', 'UI UX design Ghana, web design, website redesign, mobile-first design, user experience, brand design Ghana');
-    }, []);
-
     return (
         <div className="service-page">
+            <SEO
+                title="UI/UX & Web Design Services | TechByMax - Professional Design in Ghana"
+                description="Professional UI/UX and web design services in Ghana. Website redesign, mobile-first layouts, and brand-aligned designs that enhance user experience and drive conversions."
+                keywords="UI UX design Ghana, web design, website redesign, mobile-first design, user experience, brand design Ghana"
+                canonicalUrl="/services/ui-ux-design"
+            />
             <Navbar />
 
             <section className="service-hero">

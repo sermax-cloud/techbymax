@@ -1,30 +1,19 @@
 import React, { useEffect } from 'react';
+import SEO from '../components/SEO';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import './ServicePage.css';
 
 const MaintenanceSupport = () => {
-    useEffect(() => {
-        window.scrollTo(0, 0);
-        document.title = "Website Maintenance & Support | TechByMax - Reliable Support in Ghana";
-
-        const metaDesc = document.querySelector('meta[name="description"]');
-        if (metaDesc) {
-            metaDesc.setAttribute('content', 'Professional website maintenance and support services in Ghana. Updates, backups, speed optimization, security monitoring, and technical support to keep your site running smoothly.');
-        }
-
-        let metaKeywords = document.querySelector('meta[name="keywords"]');
-        if (!metaKeywords) {
-            metaKeywords = document.createElement('meta');
-            metaKeywords.name = 'keywords';
-            document.head.appendChild(metaKeywords);
-        }
-        metaKeywords.setAttribute('content', 'website maintenance Ghana, website support, speed optimization, security monitoring, website backup, technical support');
-    }, []);
-
     return (
         <div className="service-page">
+            <SEO
+                title="Website Maintenance & Support | TechByMax - Reliable Support in Ghana"
+                description="Professional website maintenance and support services in Ghana. Updates, backups, speed optimization, security monitoring, and technical support to keep your site running smoothly."
+                keywords="website maintenance Ghana, website support, speed optimization, security monitoring, website backup, technical support"
+                canonicalUrl="/services/maintenance-support"
+            />
             <Navbar />
 
             <section className="service-hero">

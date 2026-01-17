@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import SEO from '../components/SEO';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Features from '../components/Features';
@@ -17,7 +17,7 @@ import Blog from '../components/Blog';
 import Introduction from '../components/Introduction';
 
 function HomePage() {
-    // Simple SEO setup & Scroll Animations
+    // Scroll Animations
     useEffect(() => {
         // Force scroll to top on load
         window.scrollTo(0, 0);
@@ -25,11 +25,7 @@ function HomePage() {
             history.scrollRestoration = 'manual';
         }
 
-        document.title = "TechByMax | High-Performance Digital Solutions";
-        const metaDesc = document.querySelector('meta[name="description"]');
-        if (metaDesc) {
-            metaDesc.setAttribute('content', 'TechByMax: Custom websites, web apps & digital solutions for businesses ready to scale in Ghana and beyond.');
-        }
+        // Scroll Animation Observer
 
         // Scroll Animation Observer
         const observer = new IntersectionObserver((entries) => {
@@ -48,6 +44,11 @@ function HomePage() {
 
     return (
         <div className="app">
+            <SEO
+                title="TechByMax | High-Performance Digital Solutions"
+                description="TechByMax: Custom websites, web apps & digital solutions for businesses ready to scale in Ghana and beyond."
+                canonicalUrl="/"
+            />
             <Navbar />
             <main>
                 <Hero />

@@ -1,30 +1,19 @@
 import React, { useEffect } from 'react';
+import SEO from '../components/SEO';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import './ServicePage.css';
 
 const EcommerceSolutions = () => {
-    useEffect(() => {
-        window.scrollTo(0, 0);
-        document.title = "E-Commerce Solutions | TechByMax - Online Store Development in Ghana";
-
-        const metaDesc = document.querySelector('meta[name="description"]');
-        if (metaDesc) {
-            metaDesc.setAttribute('content', 'Professional e-commerce development services in Ghana. Build your online store with payment integration, inventory management, and secure checkout. Start selling online today.');
-        }
-
-        let metaKeywords = document.querySelector('meta[name="keywords"]');
-        if (!metaKeywords) {
-            metaKeywords = document.createElement('meta');
-            metaKeywords.name = 'keywords';
-            document.head.appendChild(metaKeywords);
-        }
-        metaKeywords.setAttribute('content', 'e-commerce Ghana, online store development, payment integration, inventory management, online shop Ghana, e-commerce website');
-    }, []);
-
     return (
         <div className="service-page">
+            <SEO
+                title="E-Commerce Solutions | TechByMax - Online Store Development in Ghana"
+                description="Professional e-commerce development services in Ghana. Build your online store with payment integration, inventory management, and secure checkout. Start selling online today."
+                keywords="e-commerce Ghana, online store development, payment integration, inventory management, online shop Ghana, e-commerce website"
+                canonicalUrl="/services/ecommerce-solutions"
+            />
             <Navbar />
 
             <section className="service-hero">

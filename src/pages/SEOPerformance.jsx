@@ -1,30 +1,19 @@
 import React, { useEffect } from 'react';
+import SEO from '../components/SEO';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import './ServicePage.css';
 
 const SEOPerformance = () => {
-    useEffect(() => {
-        window.scrollTo(0, 0);
-        document.title = "SEO & Performance Optimization | TechByMax - Rank Higher in Ghana";
-
-        const metaDesc = document.querySelector('meta[name="description"]');
-        if (metaDesc) {
-            metaDesc.setAttribute('content', 'Professional SEO and performance optimization services in Ghana. On-page SEO, speed optimization, and Google visibility setup to increase traffic and rankings.');
-        }
-
-        let metaKeywords = document.querySelector('meta[name="keywords"]');
-        if (!metaKeywords) {
-            metaKeywords = document.createElement('meta');
-            metaKeywords.name = 'keywords';
-            document.head.appendChild(metaKeywords);
-        }
-        metaKeywords.setAttribute('content', 'SEO Ghana, search engine optimization, speed optimization, Google ranking, on-page SEO, website performance, SEO services Ghana');
-    }, []);
-
     return (
         <div className="service-page">
+            <SEO
+                title="SEO & Performance Optimization | TechByMax - Rank Higher in Ghana"
+                description="Professional SEO and performance optimization services in Ghana. On-page SEO, speed optimization, and Google visibility setup to increase traffic and rankings."
+                keywords="SEO Ghana, search engine optimization, speed optimization, Google ranking, on-page SEO, website performance, SEO services Ghana"
+                canonicalUrl="/services/seo-performance"
+            />
             <Navbar />
 
             <section className="service-hero">

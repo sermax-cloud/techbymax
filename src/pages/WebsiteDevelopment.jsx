@@ -1,31 +1,19 @@
 import React, { useEffect } from 'react';
+import SEO from '../components/SEO';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import './ServicePage.css';
 
 const WebsiteDevelopment = () => {
-    useEffect(() => {
-        window.scrollTo(0, 0);
-        document.title = "Website Development Services | TechByMax - Custom Business Websites in Ghana";
-
-        const metaDesc = document.querySelector('meta[name="description"]');
-        if (metaDesc) {
-            metaDesc.setAttribute('content', 'Professional website development services in Ghana. We build corporate websites, business sites, landing pages, and portfolios that drive results. Get a custom website today.');
-        }
-
-        // Add keywords meta tag
-        let metaKeywords = document.querySelector('meta[name="keywords"]');
-        if (!metaKeywords) {
-            metaKeywords = document.createElement('meta');
-            metaKeywords.name = 'keywords';
-            document.head.appendChild(metaKeywords);
-        }
-        metaKeywords.setAttribute('content', 'website development Ghana, custom website design, business website, corporate website, web design Ghana, professional website');
-    }, []);
-
     return (
         <div className="service-page">
+            <SEO
+                title="Website Development Services | TechByMax - Custom Business Websites in Ghana"
+                description="Professional website development services in Ghana. We build corporate websites, business sites, landing pages, and portfolios that drive results. Get a custom website today."
+                keywords="website development Ghana, custom website design, business website, corporate website, web design Ghana, professional website"
+                canonicalUrl="/services/website-development"
+            />
             <Navbar />
 
             <section className="service-hero">
