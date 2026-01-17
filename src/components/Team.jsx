@@ -2,9 +2,9 @@ import React from 'react';
 import './Team.css';
 
 // Import images directly
-import maxwellImg from '../assets/team/Maxwell Dela.JPG';
-import princeImg from '../assets/team/Prince Asare.jpg';
-import eschImg from '../assets/team/Esch Barnor.jpeg';
+import maxwellImg from '../assets/team/Maxwell-Dela.jpg';
+import princeImg from '../assets/team/Prince-Asare.jpg';
+import eschImg from '../assets/team/Esch-Barnor.jpg';
 
 const Team = () => {
     const teamMembers = [
