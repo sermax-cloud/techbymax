@@ -1,6 +1,7 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
+import AnalyticsTracker from './components/AnalyticsTracker';
 import './App.css';
 
 // Lazy loading pages for performance optimization
@@ -30,6 +31,7 @@ const PageLoader = () => (
 function App() {
   return (
     <Router>
+      <AnalyticsTracker />
       <FloatingWhatsApp />
       <Suspense fallback={<PageLoader />}>
         <Routes>
