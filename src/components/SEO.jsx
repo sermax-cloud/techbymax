@@ -11,7 +11,9 @@ const SEO = ({ title, description, canonicalUrl, keywords, image }) => {
     const currentTitle = title || siteTitle;
     const currentDescription = description || siteDescription;
     // Ensure canonicalUrl uses the correct domain
-    const currentUrl = canonicalUrl ? (canonicalUrl.startsWith('http') ? canonicalUrl : `${siteUrl}${canonicalUrl}`) : siteUrl;
+    const currentUrl = canonicalUrl
+        ? (canonicalUrl.startsWith('http') ? canonicalUrl : `${siteUrl}${canonicalUrl === '/' ? '' : canonicalUrl}`)
+        : siteUrl;
     const currentImage = image ? (image.startsWith('http') ? image : `${siteUrl}${image}`) : `${siteUrl}${defaultImage}`;
 
     return (
